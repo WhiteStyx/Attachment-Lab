@@ -1,0 +1,279 @@
+.unity-text-element {
+    -unity-font-definition: url("project://database/Assets/UI%20Toolkit/Inter-VariableFont_opsz,wght.otf?fileID=12800000&guid=2db747f329a492a419ce21e075c51ab3&type=3#Inter-VariableFont_opsz,wght");
+    color: rgb(255, 255, 255);
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+}
+
+.button {
+    width: 213px;
+    height: 41px;
+}
+
+.name-field {
+    background-color: rgba(0, 0, 0, 0);
+    max-width: 248px;
+    max-height: 58px;
+    width: 50%;
+    height: 100%;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+}
+
+.name-field .unity-text-field__input {
+    background-image: url("project://database/Assets/2D%20Assets/Name.png?fileID=2800000&guid=620b370fed31abd4384da450141d4973&type=3#Name");
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.name-field .unity-text-element {
+    -unity-font-definition: url("project://database/Assets/TextMesh%20Pro/Fonts/Inter-VariableFont_opsz,wght.otf?fileID=12800000&guid=a3c4c511fab162b4b918852a40489114&type=3#Inter-VariableFont_opsz,wght");
+    font-size: 20px;
+}
+
+.name-button {
+    position: absolute;
+    right: 0;
+    align-self: center;
+    background-image: url("project://database/Assets/2D%20Assets/Redo.png?fileID=2800000&guid=95bc7599909b2874e95a656e55fb2ab5&type=3#Redo");
+    background-color: rgba(0, 0, 0, 0);
+    margin-top: 0;
+    margin-right: 4%;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 0;
+    padding-right: 0%;
+    padding-bottom: 0;
+    padding-left: 0;
+    width: 41%;
+    height: 58%;
+    max-width: 24px;
+    max-height: 24px;
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+}
+
+.gender-button {
+    background-color: rgba(0, 0, 0, 0);
+    max-width: 47px;
+    max-height: 47px;
+    width: 100%;
+    height: 100%;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+}
+
+.gender-radio {
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+}
+
+.gender-radio .unity-radio-button__input {
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    -unity-background-image-tint-color: rgba(255, 255, 255, 0.48);
+}
+
+.gender-radio .unity-radio-button__checkmark-background {
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    background-image: none;
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.gender-radio .unity-radio-button__checkmark {
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.gender-radio-female .unity-radio-button__input {
+    background-image: url("project://database/Assets/2D%20Assets/Female.png?fileID=2800000&guid=e07dd549fe7f1b146aab142ea12621ae&type=3#Female");
+}
+
+.gender-radio-female .unity-radio-button__checkmark {
+    background-image: url("project://database/Assets/2D%20Assets/Female.png?fileID=2800000&guid=e07dd549fe7f1b146aab142ea12621ae&type=3#Female");
+}
+
+.profile-ve {
+    margin-top: 18px;
+    max-height: 58px;
+    width: 100%;
+}
+
+.custom-slider {
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 5%;
+    max-width: 584px;
+    max-height: 37px;
+    width: 100%;
+    height: 100%;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+}
+
+.custom-slider .unity-base-slider__tracker {
+    background-image: url("project://database/Assets/2D%20Assets/Bar_Border.png?fileID=2800000&guid=761b2cc5db7934d448dc9ebf2d5baf37&type=3#Bar_Border");
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    background-color: rgba(0, 0, 0, 0);
+    max-width: 584px;
+    max-height: 37px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-top-left-radius: 17px;
+    border-top-right-radius: 17px;
+    border-bottom-right-radius: 17px;
+    border-bottom-left-radius: 17px;
+}
+
+.custom-slider .unity-base-slider__fill {
+    border-top-left-radius: 17px;
+    border-top-right-radius: 17px;
+    border-bottom-right-radius: 17px;
+    border-bottom-left-radius: 17px;
+}
+
+.custom-slider .unity-base-slider__dragger {
+    background-image: none;
+    width: 0%;
+    height: 100%;
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+}
+
+.background-text-field {
+    margin-top: 20px;
+}
+
+.background-text-field .unity-text-field__input {
+    background-color: rgba(0, 0, 0, 0);
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    background-image: url("project://database/Assets/2D%20Assets/Background.png?fileID=2800000&guid=436103adc12f92f4ba2c92a6e189853f&type=3#Background");
+}
+
+.background-text-field .unity-text-element {
+    -unity-font-definition: url("project://database/Assets/TextMesh%20Pro/Fonts/Inter-VariableFont_opsz,wght.otf?fileID=12800000&guid=a3c4c511fab162b4b918852a40489114&type=3#Inter-VariableFont_opsz,wght");
+    font-size: 16px;
+    -unity-text-align: upper-left;
+}
+
+.select-button {
+    width: 100%;
+    height: 100%;
+    max-width: 27.5px;
+    max-height: 27.5px;
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    margin-left: 50%;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url("project://database/Assets/2D%20Assets/Select.png?fileID=2800000&guid=529682012bcf9764bb610cc15555221c&type=3#Select");
+}
+
+.gender-radio-male .unity-radio-button__input {
+    background-image: url("project://database/Assets/2D%20Assets/Male.png?fileID=2800000&guid=c6541160d89971d4f9ca7077fc383418&type=3#Male");
+}
+
+.gender-radio-male .unity-radio-button__checkmark {
+    background-image: url("project://database/Assets/2D%20Assets/Male.png?fileID=2800000&guid=c6541160d89971d4f9ca7077fc383418&type=3#Male");
+}
+
+.sexori-radio-bisex .unity-radio-button__input {
+    background-image: url("project://database/Assets/2D%20Assets/Bisex.png?fileID=2800000&guid=f23707a9e4bf0bb41a2df19a26f7d7cb&type=3#Bisex");
+}
+
+.sexori-radio-bisex .unity-radio-button__checkmark {
+    background-image: url("project://database/Assets/2D%20Assets/Bisex.png?fileID=2800000&guid=f23707a9e4bf0bb41a2df19a26f7d7cb&type=3#Bisex");
+}
+
+.sexori-radio-hetero .unity-radio-button__input {
+    background-image: url("project://database/Assets/2D%20Assets/Hetero.png?fileID=2800000&guid=b8bf4bbcde247e7498f267e6980c6a37&type=3#Hetero");
+}
+
+.sexori-radio-hetero .unity-radio-button__checkmark {
+    background-image: url("project://database/Assets/2D%20Assets/Hetero.png?fileID=2800000&guid=b8bf4bbcde247e7498f267e6980c6a37&type=3#Hetero");
+}

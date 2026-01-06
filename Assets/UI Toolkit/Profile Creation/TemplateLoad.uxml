@@ -1,0 +1,28 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/Profile%20Creation/TemplateLoad.uss?fileID=7433441132597879392&amp;guid=76005eef5059dbf43b8189f542767290&amp;type=3#TemplateLoad" />
+    <ui:VisualElement style="flex-grow: 1; max-width: 362px; max-height: 47px; width: 100%; height: 100%; border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; border-left-color: rgb(255, 255, 255); border-right-color: rgb(255, 255, 255); border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(255, 255, 255); margin-bottom: 10px;">
+        <ui:VisualElement style="flex-grow: 1; justify-content: center; padding-left: 5px; padding-top: 5px;">
+            <ui:VisualElement style="flex-grow: 1; flex-direction: row;">
+                <ui:Label text="Save" style="font-size: 20px; margin-right: 5px;" />
+                <ui:Label name="Index" text="x" style="font-size: 20px;" />
+            </ui:VisualElement>
+            <ui:VisualElement style="flex-grow: 1; flex-direction: row;">
+                <ui:Label name="YourName" text="test" style="font-size: 10px;">
+                    <Bindings>
+                        <ui:DataBinding property="text" data-source-path="firstName" binding-mode="ToTarget" />
+                    </Bindings>
+                </ui:Label>
+                <ui:Label text="-" style="font-size: 10px;" />
+                <ui:Label text="Partner Name" name="PartnerName" style="font-size: 10px;" />
+                <ui:VisualElement style="flex-grow: 1; flex-direction: row-reverse; padding-right: 5px;">
+                    <ui:Label text="xxxx" name="Year" style="font-size: 10px; align-self: center;" />
+                    <ui:Label text="/" style="font-size: 10px; align-self: center;" />
+                    <ui:Label text="xx&#10;" name="Month" style="font-size: 10px; align-self: center;" />
+                    <ui:Label text="/" style="font-size: 10px; align-self: center;" />
+                    <ui:Label text="xx&#10;" name="Date" style="font-size: 10px; align-self: center;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:Button name="BtnLoad" style="position: absolute; width: 100%; height: 100%; background-color: rgba(188, 188, 188, 0); margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;" />
+    </ui:VisualElement>
+</ui:UXML>

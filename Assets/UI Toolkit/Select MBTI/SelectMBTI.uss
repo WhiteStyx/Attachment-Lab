@@ -1,0 +1,12 @@
+.unity-text-element {
+    -unity-font-definition: url("project://database/Assets/UI%20Toolkit/Inter-VariableFont_opsz,wght.otf?fileID=12800000&guid=2db747f329a492a419ce21e075c51ab3&type=3#Inter-VariableFont_opsz,wght");
+    color: rgb(255, 255, 255);
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+}

@@ -1,0 +1,13 @@
+.unity-text-element {
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    -unity-font-definition: url("project://database/Assets/TextMesh%20Pro/Fonts/Inter-VariableFont_opsz,wght.otf?fileID=12800000&guid=a3c4c511fab162b4b918852a40489114&type=3#Inter-VariableFont_opsz,wght");
+    color: rgb(255, 255, 255);
+}
+
