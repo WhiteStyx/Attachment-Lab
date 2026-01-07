@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 940870ce85acac543823fcdc9cf548c7, type: 3}
+  m_Name: ISTJ
+  m_EditorClassIdentifier: 
+  MBTI_sprite: {fileID: -4758815981462708790, guid: 1f7c853a067f46d4eb1e87faf6370c4f, type: 3}
+  MBTI_Name: ISTJ
+  description: ISTJ ADA:AH SALKDJASPOID
+  characteristicList:
+  - jujur
+  - gk tau

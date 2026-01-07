@@ -5,13 +5,11 @@ using UnityEngine.UIElements;
 [CreateAssetMenu(fileName = "MBTISO", menuName = "Scriptable Objects/MBTISO")]
 public class MBTISO : ScriptableObject
 {
-    public List<MBTI> mbti = new();
+    public Sprite MBTI_sprite;
+    public string MBTI_Name;
+
+    [TextArea(5,10)]
+    public string description;
+    public List<string> characteristicList;
 }
 
-[System.Serializable]
-public class MBTI
-{
-    public Image image;
-    public string type;
-    public string description;
-}

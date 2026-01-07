@@ -12,10 +12,6 @@ public enum SexOrient
     Heterosexual
 }
 
-public enum MyersBriggs
-{
-    INTJ, INTP, INFJ, INFP
-}
 
 public enum AttachmentStyle
 {
@@ -33,6 +29,26 @@ public enum Neurodivergent
     Dyspraxia,
 }
 
+public enum personalityDisorder
+{
+    Paranoid,
+    Schizoid,
+    Schizotypal
+    //Antisocial,
+    //Borderline,
+    //Histrionic,
+    //Narcissistic,
+    //Avoidant,
+    //Dependent,
+    //ObsessiveCompulsive
+}
+public enum trauma
+{
+    Chronic,
+    Complex,
+    Intergenerational
+}
+
 [System.Serializable]
 public class ProfileData
 {
@@ -43,27 +59,13 @@ public class ProfileData
     public float energy;
     public float intelligence;
     public float agreeableness;
-    public MyersBriggs myersBriggs;
+    public string myersBriggs;
     public AttachmentStyle attachmentStyle;
     public Neurodivergent neurodivergent;
-    public enum personalityDisorder
-    {
-        Paranoid,
-        Schizoid,
-        Schizotypal
-        //Antisocial,
-        //Borderline,
-        //Histrionic,
-        //Narcissistic,
-        //Avoidant,
-        //Dependent,
-        //ObsessiveCompulsive
-    }
-    public enum trauma
-    {
-        Chronic,
-        Complex,
-        Intergenerational
-    }
+    public personalityDisorder personalityDisorder;
+    public trauma trauma;
+
     public string background;
+
+
 }

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 940870ce85acac543823fcdc9cf548c7, type: 3}
+  m_Name: ISTP
+  m_EditorClassIdentifier: 
+  MBTI_sprite: {fileID: -6895454189972231442, guid: 65ccf823ab78de24fb82affbf2d53b35, type: 3}
+  MBTI_Name: ISTP
+  description: Ini ISTP
+  characteristicList:
+  - pekerja keras
+  - kepala
+  - pemarha
+  - afdsasdfasfg
