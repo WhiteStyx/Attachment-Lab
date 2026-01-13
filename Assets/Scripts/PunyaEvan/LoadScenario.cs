@@ -3,9 +3,8 @@ using UnityEngine.UI;
 using TMPro;
 using System.Collections.Generic;
 
-public class LoadMenu : MonoBehaviour
+public class LoadScenario : MonoBehaviour
 {
-
     [SerializeField] private Button confirmLoadButton;
     [Header("SAVE DATA REF")]
     [SerializeField] private Transform loadButtonContainerTransform;
@@ -13,7 +12,7 @@ public class LoadMenu : MonoBehaviour
 
     private List<LoadProfileButton> loadProfileButtonList = new List<LoadProfileButton>();
 
-    private ProfileData selectedProfileData = new ProfileData();
+    private ScenarioData selectedScenarioData = new ScenarioData();
 
     private void Awake()
     {
@@ -24,16 +23,16 @@ public class LoadMenu : MonoBehaviour
     {
         confirmLoadButton.onClick.AddListener(() => 
         {
-            if (selectedProfileData != null)
-                CreateCharacterMenu.instance.ChangeProfileData(selectedProfileData);
+            if (selectedScenarioData != null)
+                ScenarioSetUpMenu.instance.ChangeScenarioData(selectedScenarioData);
 
             Hide();
         });
     }
 
-    public void ChangeSelectedProfileData(ProfileData profileData)
+    public void ChangeSelectedScenarioData(ScenarioData scenarioData)
     {
-        selectedProfileData = profileData;
+        selectedScenarioData = scenarioData;
     }
 
     public void RemoveLoadButton()
@@ -50,16 +49,16 @@ public class LoadMenu : MonoBehaviour
     {
         RemoveLoadButton();
 
-        List<ProfileData> allProfiles = SaveManager.LoadJSON<ProfileData>("ProfileData");
+        List<ScenarioData> allScenaios = SaveManager.LoadJSON<ScenarioData>("ScenarioData");
 
         int index = 1;
-        foreach (ProfileData d in allProfiles)
+        foreach (ScenarioData d in allScenaios)
         {
             Transform loadButtonTransform = Instantiate(loadButtonPrefab, loadButtonContainerTransform);
 
-            LoadProfileButton loadProfileButton = loadButtonTransform.GetComponent<LoadProfileButton>();
+            LoadScenarioButton loadScenarioButton = loadButtonTransform.GetComponent<LoadScenarioButton>();
 
-            loadProfileButton.SetLoadProfileButton(index, d, this);
+            loadScenarioButton.SetLoadScenarioButton(index, d, this);
             index++;
         };
     }
@@ -73,5 +72,4 @@ public class LoadMenu : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
-
 }

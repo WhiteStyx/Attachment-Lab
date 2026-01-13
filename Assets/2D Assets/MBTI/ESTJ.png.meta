@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 25f0399ad46d6864a966e44e75eec380
+guid: dfc79700cb0a6354bb2c2b7fadc2670a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2999406915301485669
-    second: ESTP_0
+      213: 1908471267799698471
+    second: ESTJ_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,17 +96,43 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ESTP_0
+      name: ESTJ_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 291
-        height: 511
+        width: 417
+        height: 661
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b93da945d47ff56d0800000000000000
-      internalID: -2999406915301485669
+      spriteID: 72c8d3da1804c7a10800000000000000
+      internalID: 1908471267799698471
       vertices: []
       indices: 
       edges: []
@@ -135,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      ESTP_0: -2999406915301485669
+      ESTJ_0: 1908471267799698471
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -5,70 +5,51 @@ using UnityEngine;
 
 public static class SaveManager 
 {
-    private static string logDirectory = Path.Combine(Application.dataPath, $"ProfileData");
-    private static string logFilePath = Path.Combine(logDirectory, $"unity_log.txt");
+    private static readonly string baseDirectory = Path.Combine(Application.persistentDataPath, "GameData");
+    //private static string logFilePath = Path.Combine(baseDirectory, $"unity_log.txt");
 
-    public static void SaveToJSON(ProfileData data)
+    public static void SaveToJSON<T>(T data, string fileName, string subFolder)
     {
-        string jsonData = JsonUtility.ToJson(data);
-        string fileName = $"{data.firstName} {data.lastName}DATA.json";
-        string filePath = Path.Combine(logDirectory, fileName);
+        string folderPath = Path.Combine(baseDirectory, subFolder);
+        string jsonData = JsonUtility.ToJson(data, true);
+        string filePath = Path.Combine(folderPath, fileName + ".json");
 
-        if (!Directory.Exists(logDirectory))
+        if (!Directory.Exists(folderPath))
         {
-            Directory.CreateDirectory(logDirectory);
+            Directory.CreateDirectory(folderPath);
         }
+        File.WriteAllText(filePath, jsonData);
 
         Debug.Log($"Logging File: {filePath}");
-        System.IO.File.WriteAllText(filePath, jsonData);
         Debug.Log($"saved:{filePath} filepath:{filePath}");
     }
 
-    public static List<ProfileData> LoadJSON()
+    public static List<T> LoadJSON<T>(string subFolder)
     {
-        List<ProfileData> profileDataList = new List<ProfileData>();
+        List<T> dataList = new List<T>();
+        string folderPath = Path.Combine(baseDirectory, subFolder);
+        
+        if(!Directory.Exists(folderPath)) return dataList;
 
-        void ProcessDirectory(string targetDirectory)
+        string[] files = Directory.GetFiles(folderPath, "*.json");
+        foreach (string file in files)
         {
-            // Process the list of files found in the directory.
-            string[] fileEntries = Directory.GetFiles(targetDirectory);
-            
-            foreach (string fileName in fileEntries)
-                ProcessFile(fileName);
-
-            // Recurse into subdirectories of this directory.
-            string[] subdirectoryEntries = Directory.GetDirectories(targetDirectory);
-            foreach (string subdirectory in subdirectoryEntries) 
-            {
-                ProcessDirectory(subdirectory);
-            }
+            string json = File.ReadAllText(file);
+            T obj = JsonUtility.FromJson<T>(json);
+            dataList.Add(obj);
         }
+        return dataList;
+    }
 
-        // Insert logic for processing found files here.
-        void ProcessFile(string path)
-        {
-            // Ambil nama file saja
-            string fileName = Path.GetFileName(path).Trim();
+    public static T LoadSingleJSON<T>(string fileName, string subFolder)
+    {
+        string folderPath = Path.Combine(baseDirectory, subFolder);
+        string filePath = Path.Combine(folderPath, fileName + ".json");
 
-            // Split berdasarkan '.'
-            string[] parts = fileName.Split('.');
+        if (!File.Exists(filePath)) return default;
 
-            // Ambil ekstensi terakhir
-            string extension = parts[parts.Length - 1];
-
-            if (extension != "json")
-                return;
-
-            string fromJson = File.ReadAllText(path);
-            ProfileData profile = JsonUtility.FromJson<ProfileData>(fromJson);
-            profileDataList.Add(profile);
-
-        }
-
-
-        ProcessDirectory(logDirectory);
-
-        return profileDataList;
+        string json = File.ReadAllText(filePath);
+        return JsonUtility.FromJson<T>(json);
     }
 
 }

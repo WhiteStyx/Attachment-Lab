@@ -1,8 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.EventSystems;
 using System;
 using TMPro;
+using Unity.VisualScripting;
 
 public class CreateCharacterMenu : MonoBehaviour
 {
@@ -12,6 +12,7 @@ public class CreateCharacterMenu : MonoBehaviour
 
     [SerializeField] private Button backButton;
     [SerializeField] private Button saveButton;
+    [SerializeField] private Button selectButton;
 
     [SerializeField] private TextMeshProUGUI MBTI_text;
 
@@ -27,13 +28,28 @@ public class CreateCharacterMenu : MonoBehaviour
     private void Start()
     {
         backButton.onClick.AddListener(()=> {
-            MainMenu_Evan.instance.Show();
+            ScenarioSetUpMenu.instance.Show();
             Hide();
         });
 
         saveButton.onClick.AddListener(()=> {
-            SaveManager.SaveToJSON(createdProfileData);
+            string fileName = createdProfileData.firstName + "_" + createdProfileData.lastName;
+            SaveManager.SaveToJSON(createdProfileData, fileName, "ProfileData");
         });
+
+        selectButton.onClick.AddListener(SelectPartner);
+    }
+
+    private void SelectPartner()
+    {
+        string profileID = createdProfileData.firstName + "_" + createdProfileData.lastName;
+        string fullName = createdProfileData.firstName + " " + createdProfileData.lastName;
+    
+        if (string.IsNullOrWhiteSpace(fullName)) fullName = "Unknown Partner";
+
+        ScenarioSetUpMenu.instance.Show();
+        ScenarioSetUpMenu.instance.ChangePartner(fullName, profileID);
+        Hide();
     }
 
     public void ChangeProfileData(ProfileData profileData)

@@ -13,8 +13,13 @@ public class MainMenu_Evan : MonoBehaviour
         instance = this;
 
         startButton.onClick.AddListener(() => {
-            CreateCharacterMenu.instance.Show();
+            ScenarioSetUpMenu.instance.Show();
             Hide();
+        });
+
+        loadButton.onClick.AddListener(() =>
+        {
+            //
         });
 
     }

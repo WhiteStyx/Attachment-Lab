@@ -7,10 +7,10 @@ public class Testing : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
-            foreach (ProfileData d in SaveManager.LoadJSON()) {
-                Debug.Log(d.firstName);
+            // foreach (ProfileData d in SaveManager.LoadJSON()) {
+            //     Debug.Log(d.firstName);
             
-            };
+            // };
         }
     }
 }
