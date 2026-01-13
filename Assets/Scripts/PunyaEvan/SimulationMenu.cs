@@ -25,7 +25,7 @@ public class SimulationMenu : MonoBehaviour
 
     private GameObject currentTypingBubble;
     
-    public string url = "http://127.0.0.1:8000/chat/";
+    public string url = "https://testing8000.share.zrok.io/chat/";
 
     private void Awake()
     {

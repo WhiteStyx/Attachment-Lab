@@ -5017,7 +5017,7 @@ MonoBehaviour:
   backButton: {fileID: 1407157851}
   saveButton: {fileID: 701974822}
   partnerText: {fileID: 882025255}
-  language: Indonesia
+  language: English
 --- !u!1 &408348652
 GameObject:
   m_ObjectHideFlags: 0
@@ -15301,7 +15301,7 @@ MonoBehaviour:
   chatPrefab: {fileID: 8254552292266341024, guid: 1d6696eb58577b04884c7c65564f688a, type: 3}
   typingPrefab: {fileID: 1452414915129900147, guid: 3311537eac2f7bc47948b083e2b4007a, type: 3}
   scrollRect: {fileID: 746664635}
-  url: https://0a6d8ae3c331.ngrok-free.app/chat/
+  url: https://testing8000.share.zrok.io/chat/
 --- !u!1 &1236143392
 GameObject:
   m_ObjectHideFlags: 0
