@@ -1,9 +1,13 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:VisualElement name="Panel" style="flex-grow: 1; max-width: 317px; max-height: 560px; background-color: rgb(106, 106, 106); width: 100%; height: 100%; justify-content: center;">
-        <ui:VisualElement name="VisualElement" style="flex-grow: 1; width: 95%; height: 95%; align-self: center; max-width: 294px; max-height: 535px; border-top-width: 4px; border-right-width: 4px; border-bottom-width: 4px; border-left-width: 4px; border-left-color: rgb(190, 190, 190); border-right-color: rgb(190, 190, 190); border-top-color: rgb(190, 190, 190); border-bottom-color: rgb(190, 190, 190); border-top-left-radius: 7px; border-top-right-radius: 7px; border-bottom-right-radius: 7px; border-bottom-left-radius: 7px; justify-content: center; align-content: center; align-items: center; flex-direction: column;">
-            <ui:VisualElement style="flex-grow: 1; height: 85px; max-height: 89px;" />
-            <ui:Label text="Label" style="font-size: 33px;" />
-            <ui:Label text="Label" style="font-size: 33px;" />
+    <Style src="project://database/Assets/UI%20Toolkit/Select%20MBTI/TemplateMBTI.uss?fileID=7433441132597879392&amp;guid=18bbd4cfe24565d48899b129cd773d5f&amp;type=3#TemplateMBTI" />
+    <Style src="project://database/Assets/UI%20Toolkit/Base/Text.uss?fileID=7433441132597879392&amp;guid=982e485f21bc57943921fcc577e5c17f&amp;type=3#Text" />
+    <ui:VisualElement name="Panel" class="template-mbti-panel" style="flex-grow: 1;">
+        <ui:VisualElement name="VisualElement" style="flex-grow: 1; width: 95%; height: 95%; align-self: center; max-width: 294px; max-height: 535px; border-top-width: 4px; border-right-width: 4px; border-bottom-width: 4px; border-left-width: 4px; border-left-color: rgb(190, 190, 190); border-right-color: rgb(190, 190, 190); border-top-color: rgb(190, 190, 190); border-bottom-color: rgb(190, 190, 190); border-top-left-radius: 7px; border-top-right-radius: 7px; border-bottom-right-radius: 7px; border-bottom-left-radius: 7px; justify-content: flex-start; align-content: center; align-items: center; flex-direction: column;">
+            <ui:VisualElement class="template-image" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/2D%20Assets/_Myers%20Briggs%20Icon%20Tee_%20Essential%20T-Shirt%20for%20Sale%20by%20woahitsjulez%202%20(1).png?fileID=2800000&amp;guid=c4c19e70f976d5544bb52c402757b80c&amp;type=3#_Myers Briggs Icon Tee_ Essential T-Shirt for Sale by woahitsjulez 2 (1)&quot;);" />
+            <ui:VisualElement style="flex-grow: 1; height: 1px; width: 100%; max-height: 1px; background-color: rgb(255, 255, 255);" />
+            <ui:Label text="Label" name="Type" class="template-type" />
+            <ui:Label text="Label" name="Description" class="template-description" />
         </ui:VisualElement>
+        <ui:Button name="SelectButton" class="template-button" />
     </ui:VisualElement>
 </ui:UXML>

@@ -10,7 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 940870ce85acac543823fcdc9cf548c7, type: 3}
-  m_Name: MBTISO
+  m_Name: ESTP 4
   m_EditorClassIdentifier: 
-  type: 
-  description: 
+  image: {fileID: 0}
+  type: ESTP
+  characteristic: Spontant, Inventive

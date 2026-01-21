@@ -14,6 +14,7 @@ public enum SexOrient
 
 public enum MyersBriggs
 {
+    ESTJ, ESTP, ESFJ, ESFP,
     INTJ, INTP, INFJ, INFP
 }
 

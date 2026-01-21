@@ -1,5 +1,8 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="TemplateMBTI" src="project://database/Assets/UI%20Toolkit/Select%20MBTI/TemplateMBTI.uxml?fileID=9197481963319205126&amp;guid=dbe2ec5c24c1d1846b65d2e349448411&amp;type=3#TemplateMBTI" />
     <Style src="project://database/Assets/UI%20Toolkit/Select%20MBTI/SelectMBTI.uss?fileID=7433441132597879392&amp;guid=4818e53754ab7474f8efb7536f8e1f48&amp;type=3#SelectMBTI" />
+    <Style src="project://database/Assets/UI%20Toolkit/Select%20MBTI/TemplateMBTI.uss?fileID=7433441132597879392&amp;guid=18bbd4cfe24565d48899b129cd773d5f&amp;type=3#TemplateMBTI" />
+    <Style src="project://database/Assets/UI%20Toolkit/Base/Text.uss?fileID=7433441132597879392&amp;guid=982e485f21bc57943921fcc577e5c17f&amp;type=3#Text" />
     <ui:VisualElement name="Panel" style="flex-grow: 1; width: 100%; height: 100%;">
         <ui:VisualElement style="flex-grow: 1;">
             <ui:VisualElement style="flex-grow: initial; flex-direction: column; height: 15%; padding-left: 2%; padding-top: 1%; padding-right: 2%;">
@@ -13,7 +16,36 @@
                 </ui:VisualElement>
             </ui:VisualElement>
             <ui:VisualElement style="flex-grow: 1;">
-                <ui:ListView style="width: 100%; height: 100%;" />
+                <ui:ScrollView mode="Horizontal" name="ScrollMBTI" vertical-scroller-visibility="Hidden" touch-scroll-type="Elastic" picking-mode="Ignore" horizontal-scroller-visibility="Hidden" class="mbti-screen-scroll-view" style="padding-left: 40px; padding-right: 40px; display: flex; width: 1387px; height: 100%;">
+                    <ui:Instance template="TemplateMBTI" style="width: 320px; height: 560px;" />
+                    <ui:Instance template="TemplateMBTI" style="width: 320px; height: 560px;" />
+                    <ui:Instance template="TemplateMBTI" style="width: 320px; height: 560px;" />
+                    <ui:Instance template="TemplateMBTI" style="width: 320px; height: 560px;" />
+                    <ui:Instance template="TemplateMBTI" style="width: 320px; height: 560px;" />
+                    <ui:Instance template="TemplateMBTI" style="width: 320px; height: 560px;" />
+                    <ui:Instance template="TemplateMBTI" style="width: 320px; height: 560px;" />
+                    <ui:Instance template="TemplateMBTI" style="width: 320px; height: 560px;" />
+                </ui:ScrollView>
+                <ui:ListView item-template="project://database/Assets/UI%20Toolkit/Select%20MBTI/TemplateMBTI.uxml?fileID=9197481963319205126&amp;guid=dbe2ec5c24c1d1846b65d2e349448411&amp;type=3#TemplateMBTI" data-source="project://database/Assets/Scripts/SO/MBTI/MBTISO.asset?fileID=11400000&amp;guid=c80e1a1a888676b4f8f7b933002d3edf&amp;type=2#MBTISO" name="ListMBTI" virtualization-method="DynamicHeight" horizontal-scrolling="true" class="list-view" style="flex-direction: row; display: none;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 1; position: absolute; right: 0; height: 100%; width: 626px; display: flex; background-color: rgba(164, 164, 164, 0.57);">
+            <ui:VisualElement style="flex-grow: 1; padding-left: 5%; padding-right: 5%; padding-top: 2%; width: 408px; height: 922px; background-color: rgb(169, 169, 169); position: absolute; top: 72px; left: 130px;">
+                <ui:Label text="title&#10;" name="Title" style="font-size: 20px; color: rgba(255, 255, 255, 0.4);" />
+                <ui:VisualElement style="flex-grow: 1; height: 13px; max-height: 260px; width: 100%; margin-top: 5%;">
+                    <ui:Label text="Details" name="Desc" style="font-size: 20px;" />
+                </ui:VisualElement>
+                <ui:VisualElement style="flex-grow: 1; max-height: 1px; width: 100%; background-color: rgb(255, 255, 255);" />
+                <ui:VisualElement style="flex-grow: 1; height: 13px; max-height: 280px; width: 100%; margin-top: 2%;">
+                    <ui:Label text="Description" style="font-size: 20px; color: rgba(255, 255, 255, 0.4);" />
+                    <ui:Label text="Details" name="Desc" style="font-size: 20px;" />
+                </ui:VisualElement>
+                <ui:VisualElement style="flex-grow: 1; max-height: 1px; width: 100%; background-color: rgb(255, 255, 255);" />
+                <ui:VisualElement style="flex-grow: 1; height: 13px; max-height: 363px; width: 100%;">
+                    <ui:Label text="Characteristics" style="font-size: 20px; color: rgba(255, 255, 255, 0.4);" />
+                    <ui:Label text="Details" name="Desc" style="font-size: 20px;" />
+                </ui:VisualElement>
+                <ui:Button text="Select MBTI" name="ButtonConfirm" style="position: relative; background-image: url(&quot;project://database/Assets/2D%20Assets/Save.png?fileID=2800000&amp;guid=d7f831f2a655a3b48b4253003926ba49&amp;type=3#Save&quot;); margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 7px; padding-left: 0; max-width: 213px; max-height: 41px; width: 100%; height: 100%; border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; font-size: 15px; background-color: rgba(188, 188, 188, 0); color: rgb(0, 0, 0); align-self: flex-end; right: -30px; bottom: auto;" />
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>

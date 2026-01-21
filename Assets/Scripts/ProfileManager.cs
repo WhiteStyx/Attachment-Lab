@@ -5,7 +5,7 @@ using UnityEngine.Playables;
 public class ProfileManager : MonoBehaviour
 {
     public static ProfileManager Instance { get; private set; }
-    [SerializeField] private ProfileSaveData profileSaveData;
+    [SerializeField] private ProfileData profileSaveData;
     [SerializeField] private testSo testSo;
 
     void Awake()
