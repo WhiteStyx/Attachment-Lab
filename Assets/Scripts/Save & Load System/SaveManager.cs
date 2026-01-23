@@ -52,4 +52,23 @@ public static class SaveManager
         return JsonUtility.FromJson<T>(json);
     }
 
+    public static List<(T data, DateTime saveTime)> LoadJSONWithTime<T>(string subFolder)
+    {
+        List<(T, DateTime)> list = new();
+
+        string folderPath = Path.Combine(baseDirectory, subFolder);
+        if (!Directory.Exists(folderPath)) return list;
+
+        string[] files = Directory.GetFiles(folderPath, "*.json");
+        foreach (string file in files)
+        {
+            string json = File.ReadAllText(file);
+            T obj = JsonUtility.FromJson<T>(json);
+            DateTime time = File.GetLastWriteTime(file);
+
+            list.Add((obj, time));
+        }
+
+        return list;
+    }
 }

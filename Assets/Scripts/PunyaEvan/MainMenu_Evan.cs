@@ -17,9 +17,9 @@ public class MainMenu_Evan : MonoBehaviour
             Hide();
         });
 
-        loadButton.onClick.AddListener(() =>
+        exitButton.onClick.AddListener(() =>
         {
-            //
+            Application.Quit();
         });
 
     }

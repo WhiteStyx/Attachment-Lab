@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System;
 
 public class LoadProfileButton : MonoBehaviour
 {
@@ -11,11 +12,12 @@ public class LoadProfileButton : MonoBehaviour
     private ProfileData profileData;
 
 
-    public void SetLoadProfileButton(int index, ProfileData profileData, LoadMenu loadMenu)
+    public void SetLoadProfileButton(int index, ProfileData profileData, DateTime saveTime, LoadMenu loadMenu)
     {
         saveText.text = "Save Data "+index.ToString();
 
         partnerNameText.text = profileData.firstName + " " + profileData.lastName;
+        dateText.text = saveTime.ToString("dd MMM yyyy");
 
         this.profileData = profileData;
 

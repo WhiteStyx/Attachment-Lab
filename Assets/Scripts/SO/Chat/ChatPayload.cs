@@ -17,4 +17,16 @@ public class ChatResponse
     public string reply;
 }
 
+[Serializable]
+public class HistoryData
+{
+    public string role;
+    public string content;
+}
+
+[Serializable]
+public class ChatHistoryResponse
+{
+    public HistoryData[] messages;
+}
 

@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System;
 
 public class LoadScenarioButton : MonoBehaviour
 {
@@ -10,11 +11,11 @@ public class LoadScenarioButton : MonoBehaviour
 
     private ScenarioData scenarioData;
 
-    public void SetLoadScenarioButton(int index, ScenarioData scenarioData, LoadScenario loadScenario)
+    public void SetLoadScenarioButton(int index, ScenarioData scenarioData, DateTime time, LoadScenario loadScenario)
     {
         saveText.text = "Save Data "+index.ToString();
-
         partnerNameText.text = scenarioData.scenario;
+        dateText.text = time.ToString("dd MMM yyyy");
 
         this.scenarioData = scenarioData;
 

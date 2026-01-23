@@ -7,6 +7,7 @@ using System.Collections;
 using UnityEngine.Networking;
 using System.Text;
 using UnityEngine.AI;
+using UnityEditor.Animations;
 public class SimulationMenu : MonoBehaviour
 {
     public static SimulationMenu instance;
@@ -17,6 +18,7 @@ public class SimulationMenu : MonoBehaviour
     [SerializeField] private Transform chatContent;
     [SerializeField] private GameObject chatPrefab;
     [SerializeField] private GameObject typingPrefab;
+    [SerializeField] private GameObject scrollView;
     [SerializeField] private ScrollRect scrollRect;
 
     private string activeChatID;
@@ -25,13 +27,14 @@ public class SimulationMenu : MonoBehaviour
 
     private GameObject currentTypingBubble;
     
-    public string url = "https://testing8000.share.zrok.io/chat/";
+    private readonly string url = "https://testing8000.share.zrok.io/chats/";
 
     private void Awake()
     {
         instance = this;
 
         Hide();
+        scrollView.SetActive(false);
     }
 
     void Start()
@@ -63,7 +66,7 @@ public class SimulationMenu : MonoBehaviour
         StartCoroutine(ForceScrollDown());
     }
 
-    private void SpawnBubble(string pesan, bool isUser)
+    public void SpawnBubble(string pesan, bool isUser)
     {
         GameObject newBubble = Instantiate(chatPrefab, chatContent);
 
@@ -75,6 +78,14 @@ public class SimulationMenu : MonoBehaviour
         aiName.text = text;
     }
 
+    public void RemoveChatBubble()
+    {
+        foreach(Transform t in chatContent)
+        {
+            Destroy(t.gameObject);
+        }
+    }
+
     public void InitializeChat(string chatId, string aiName, string identity, string rules)
     {
         activeChatID = chatId;
@@ -82,8 +93,56 @@ public class SimulationMenu : MonoBehaviour
         aiRules = rules;
         
         SetText(aiName);
-        
+        RemoveChatBubble();
+
+        StartCoroutine(LoadChatRoutine(chatId));
+        scrollView.SetActive(true);
+
         Debug.Log($"Chat Started! ID: {chatId}");
+    }
+
+    private IEnumerator LoadChatRoutine(string chatId)
+    {
+        yield return null;
+
+        yield return StartCoroutine(GetHistory(chatId));
+    }
+
+    public IEnumerator GetHistory(string chatId)
+    {
+        string historyUrl = $"https://testing8000.share.zrok.io/chats/{chatId}/messages";
+        using UnityWebRequest request = UnityWebRequest.Get(historyUrl);
+        yield return request.SendWebRequest();
+
+        if (request.result == UnityWebRequest.Result.Success)
+        {
+            string jsonResponse = request.downloadHandler.text;
+            Debug.Log("Raw JSON: " + jsonResponse); // Buat intip isi datanya
+
+            ChatHistoryResponse res = JsonUtility.FromJson<ChatHistoryResponse>(jsonResponse);
+
+            // --- PERBAIKAN 2: Cek apakah hasil parsing berhasil ---
+            if (res == null || res.messages == null)
+            {
+                Debug.LogWarning("History kosong atau format JSON salah!");
+                yield break;
+            }
+
+            foreach (var h in res.messages)
+            {
+                // Pastikan h.content dan h.role tidak null dari API
+                if (h != null) SpawnBubble(h.content, h.role == "user");
+            }
+
+            // Refresh UI
+            Canvas.ForceUpdateCanvases();
+            LayoutRebuilder.ForceRebuildLayoutImmediate(chatContent.GetComponent<RectTransform>());
+            StartCoroutine(ForceScrollDown());
+        }
+        else
+        {
+            Debug.LogError("Error Fetch History: " + request.error);
+        }
     }
 
     public IEnumerator SendChat(string userChar, string aiChar, string message)

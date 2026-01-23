@@ -15,7 +15,7 @@ public class ScenarioSetUpMenu : MonoBehaviour
     [SerializeField] private Button backButton;
     [SerializeField] private Button saveButton;
     [SerializeField] private TextMeshProUGUI partnerText;
-    [SerializeField] private string language;
+    //[SerializeField] private string language;
 
     private ScenarioData createdScenarioData = new();
 
@@ -41,8 +41,8 @@ public class ScenarioSetUpMenu : MonoBehaviour
 
         startButton.onClick.AddListener(() =>
         {
-            StartNewChatSession();
             SimulationMenu.instance.Show();
+            StartNewChatSession();
             Hide();
         });
     }
@@ -95,15 +95,7 @@ public class ScenarioSetUpMenu : MonoBehaviour
 
     public void StartNewChatSession()
     {
-        string currentChatID = System.Guid.NewGuid().ToString();
-
-        ChatData session = new()
-        {
-            chatId = currentChatID,
-            partnerProfileID = createdScenarioData.partnerProfileID,
-            scenario = createdScenarioData.scenario
-        };
-        SaveManager.SaveToJSON(session, currentChatID, "ChatData");
+        string currentChatID = Guid.NewGuid().ToString();
 
         ProfileData partnerProfile = SaveManager.LoadSingleJSON<ProfileData>(createdScenarioData.partnerProfileID, "ProfileData");
 
@@ -118,8 +110,8 @@ public class ScenarioSetUpMenu : MonoBehaviour
                             $"Personality: {partnerProfile.myersBriggs}. " +
                             $"Energy Level: {partnerProfile.energy}/10. " +
                             $"Traits: Intelligence {partnerProfile.intelligence}/10, Agreeableness {partnerProfile.agreeableness}/10. " +
-                            $"Background: {partnerProfile.background}." +
-                            $"Language: {language}.";
+                            $"Background: {partnerProfile.background}.";
+                            //$"Language: {language}.";
 
         string  rules = $"Current Scenario: {createdScenarioData.scenario}. ";
                 rules += $"Challenge Level: {createdScenarioData.partnerDifficulty}/10. ";
@@ -127,6 +119,17 @@ public class ScenarioSetUpMenu : MonoBehaviour
                 rules += createdScenarioData.foulLanguage ? "You may use harsh language. " : "Strictly no swearing. ";
                 rules += createdScenarioData.partnerFeelings ? "Show deep emotional vulnerability and express your inner feelings. " : "Be more stoic, reserved, and hide your emotions. ";
                 rules += createdScenarioData.playerEmotions ? "Use asterisks (e.g., *smiles*) to describe your physical actions and emotions. " : "Do not use asterisks or any narration. Send ONLY the dialog text without describing your actions.";
+
+        ChatData session = new()
+        {
+            chatId = currentChatID,
+            partnerName = createdScenarioData.partnerName,
+            partnerProfileID = createdScenarioData.partnerProfileID,
+            scenario = createdScenarioData.scenario,
+            aiIdentity = identity,
+            aiRules = rules,
+        };
+        SaveManager.SaveToJSON(session, currentChatID, "ChatData");
 
         SimulationMenu.instance.InitializeChat(currentChatID, partnerProfile.firstName, identity, rules);
     }

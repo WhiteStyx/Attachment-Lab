@@ -50,16 +50,16 @@ public class LoadMenu : MonoBehaviour
     {
         RemoveLoadButton();
 
-        List<ProfileData> allProfiles = SaveManager.LoadJSON<ProfileData>("ProfileData");
+        var profiles = SaveManager.LoadJSONWithTime<ProfileData>("ProfileData");
 
         int index = 1;
-        foreach (ProfileData d in allProfiles)
+        foreach (var (data, time) in profiles)
         {
             Transform loadButtonTransform = Instantiate(loadButtonPrefab, loadButtonContainerTransform);
 
             LoadProfileButton loadProfileButton = loadButtonTransform.GetComponent<LoadProfileButton>();
 
-            loadProfileButton.SetLoadProfileButton(index, d, this);
+            loadProfileButton.SetLoadProfileButton(index, data, time, this);
             index++;
         };
     }

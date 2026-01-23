@@ -49,16 +49,16 @@ public class LoadScenario : MonoBehaviour
     {
         RemoveLoadButton();
 
-        List<ScenarioData> allScenaios = SaveManager.LoadJSON<ScenarioData>("ScenarioData");
+        var allScenaios = SaveManager.LoadJSONWithTime<ScenarioData>("ScenarioData");
 
         int index = 1;
-        foreach (ScenarioData d in allScenaios)
+        foreach (var (data, time) in allScenaios)
         {
             Transform loadButtonTransform = Instantiate(loadButtonPrefab, loadButtonContainerTransform);
 
             LoadScenarioButton loadScenarioButton = loadButtonTransform.GetComponent<LoadScenarioButton>();
 
-            loadScenarioButton.SetLoadScenarioButton(index, d, this);
+            loadScenarioButton.SetLoadScenarioButton(index, data, time, this);
             index++;
         };
     }
