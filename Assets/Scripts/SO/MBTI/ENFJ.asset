@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 940870ce85acac543823fcdc9cf548c7, type: 3}
+  m_Name: ENFJ
+  m_EditorClassIdentifier: 
+  MBTI_sprite: {fileID: 8667201947788167589, guid: b19879457c1319d4d89e3709416f61f2, type: 3}
+  MBTI_Name: ENFJ
+  description: Secara teknis, mereka adalah orang yang memahami dunia melalui interaksi
+    dan emosi orang lain, lalu bertindak untuk menjaga harmoni dan mendorong orang
+    di sekitarnya berkembang.
+  characteristicList:
+  - empathic
+  - intuitive
+  - socially proactive
+  - idealistic
+  - bertanggung jawab

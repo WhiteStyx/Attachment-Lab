@@ -7,7 +7,6 @@ using System.Collections;
 using UnityEngine.Networking;
 using System.Text;
 using UnityEngine.AI;
-using UnityEditor.Animations;
 public class SimulationMenu : MonoBehaviour
 {
     public static SimulationMenu instance;
@@ -117,11 +116,10 @@ public class SimulationMenu : MonoBehaviour
         if (request.result == UnityWebRequest.Result.Success)
         {
             string jsonResponse = request.downloadHandler.text;
-            Debug.Log("Raw JSON: " + jsonResponse); // Buat intip isi datanya
+            Debug.Log("Raw JSON: " + jsonResponse);
 
             ChatHistoryResponse res = JsonUtility.FromJson<ChatHistoryResponse>(jsonResponse);
 
-            // --- PERBAIKAN 2: Cek apakah hasil parsing berhasil ---
             if (res == null || res.messages == null)
             {
                 Debug.LogWarning("History kosong atau format JSON salah!");
@@ -130,11 +128,9 @@ public class SimulationMenu : MonoBehaviour
 
             foreach (var h in res.messages)
             {
-                // Pastikan h.content dan h.role tidak null dari API
                 if (h != null) SpawnBubble(h.content, h.role == "user");
             }
 
-            // Refresh UI
             Canvas.ForceUpdateCanvases();
             LayoutRebuilder.ForceRebuildLayoutImmediate(chatContent.GetComponent<RectTransform>());
             StartCoroutine(ForceScrollDown());

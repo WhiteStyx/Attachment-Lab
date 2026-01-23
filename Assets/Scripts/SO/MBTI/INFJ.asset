@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MBTI_sprite: {fileID: 5782943833533837407, guid: 62896cf07c2524c4089e3154987cca14, type: 3}
   MBTI_Name: INFJ
-  description: INFJ adalah tipe "The Mystic" atau "The Idealist". Secara teknis,
-    mereka adalah orang yang dunianya lebih banyak di dalam kepala daripada di luar.
+  description: Secara teknis, mereka adalah orang yang dunianya lebih banyak di dalam
+    kepala daripada di luar.
   characteristicList:
   - Intuitive
   - Keras Kepala

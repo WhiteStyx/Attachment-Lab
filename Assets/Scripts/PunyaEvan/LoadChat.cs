@@ -26,7 +26,7 @@ public class LoadChat : MonoBehaviour
             if (selectedChatData != null)
                 SimulationMenu.instance.InitializeChat(
                     selectedChatData.chatId, 
-                    selectedChatData.partnerProfileID,
+                    selectedChatData.partnerName,
                     selectedChatData.aiIdentity, 
                     selectedChatData.aiRules);
             Hide();

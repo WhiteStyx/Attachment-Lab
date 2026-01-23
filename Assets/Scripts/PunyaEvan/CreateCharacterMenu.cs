@@ -43,12 +43,12 @@ public class CreateCharacterMenu : MonoBehaviour
     private void SelectPartner()
     {
         string profileID = createdProfileData.firstName + "_" + createdProfileData.lastName;
-        string fullName = createdProfileData.firstName + " " + createdProfileData.lastName;
+        //string fullName = createdProfileData.firstName + " " + createdProfileData.lastName;
     
-        if (string.IsNullOrWhiteSpace(fullName)) fullName = "Unknown Partner";
+        if (string.IsNullOrWhiteSpace(createdProfileData.firstName)) createdProfileData.firstName = "Unknown Partner";
 
         ScenarioSetUpMenu.instance.Show();
-        ScenarioSetUpMenu.instance.ChangePartner(fullName, profileID);
+        ScenarioSetUpMenu.instance.ChangePartner(createdProfileData.firstName, profileID);
         Hide();
     }
 
